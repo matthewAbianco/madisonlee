@@ -2888,32 +2888,13 @@ highlight: function(element) { // hightlight error inputs
           pattern: function() {
             var actor_union = $('[name = "actor[union]"]:checked').val();
             if (actor_union == 'AABP') {
-              return /^\d+$/;
+              return /^\d{5)$/;
             } else if(actor_union == 'Apprentice'){
-              return /^\d+$/;
+              return /^\d{5}$/;
             } else {
-              return /^[a-zA-Z][0-9]{7}$/;
+              return /^[a-zA-Z0-9-]{7,8}$/;
             }
           },
-          minlength: function () {
-            var actor_union = $('[name = "actor[union]"]:checked').val();
-            if (actor_union == 'AABP') {
-              return 5;
-            } else if(actor_union == 'Apprentice'){
-              return 5;
-            } else {
-              return 8;
-            }
-          },
-          maxlength: function () {
-            var actor_union = $('[name = "actor[union]"]:checked').val();
-            if (actor_union == 'AABP') {
-              return 5;
-            } else if(actor_union == 'Apprentice'){
-              return 5;
-            } else {
-              return 8;
-            }
           },
           required: {
             depends: function (element) {
